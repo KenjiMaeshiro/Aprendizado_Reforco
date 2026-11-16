@@ -1,2 +1,2 @@
-# Aprendizado_Refor-o
+# Aprendizado_Reforco
 Trabalho de Inteligência computacional, aprendizado por reforço
