@@ -1,0 +1,6 @@
+﻿heroi,class_name,alcance_max_m,queda_inicio_m,queda_fim_m,escala_inicio,escala_fim,spread,recarga_por_bala,recarga_inicial_s
+Infernus,citadel_weapon_inferno_set,177.8,17.9999894,54.99989,1,0.1,0.05,False,0.0
+Viscoso,citadel_weapon_viscous_set,177.8,19.9898,57.5056,1,0.1,0.2,False,0.0
+Vindicta,citadel_weapon_hornet_set,177.8,19.9898,64.000126,1,0.1,0.05,False,0.0
+Abrams,citadel_weapon_bull_set,177.8,16.9999914,39.99992,1,0.1,2.0,True,0.705
+Guarda,citadel_weapon_warden_set,177.8,17.9999894,46.999906,1,0.1,0.0,False,0.0

@@ -1,0 +1,6 @@
+﻿hero_id,nome_heroi,weapon_id,weapon_primary,status_referencia,vida_base,vigor_base,regeneracao_base,bullet_damage,bullets,damage_per_shot,shots_per_second,damage_per_second,damage_per_second_with_reload,reload_duration,clip_size,player_selectable,disabled,development_state,in_development
+1,Infernus,556186193,citadel_weapon_inferno_set,encontrada,830,3,2.0,5.5,1,5.5,9.523809523809524,52.38095238095238,27.835051546391757,2.25,27,True,False,release,False
+3,Vindicta,3510968490,citadel_weapon_hornet_set,encontrada,755,2,2.0,12.33,1,12.33,4.329004329004329,53.37662337662338,31.016814510790407,2.914,19,True,False,release,False
+6,Abrams,3609948706,citadel_weapon_bull_set,encontrada,800,3,1.5,3.78,9,34.02,1.5873015873015872,53.99999999999999,48.81307293742526,0.3525,9,True,False,release,False
+25,Guarda,816395058,citadel_weapon_warden_set,encontrada,805,3,2.0,17.34,1,17.34,3.809523809523809,66.05714285714285,38.6520684455517,2.914,17,True,False,release,False
+35,Viscoso,3413773852,citadel_weapon_viscous_set,encontrada,780,3,2.0,10.34,1,10.34,4.761904761904762,49.238095238095234,29.75539568345324,2.5,20,True,False,release,False
