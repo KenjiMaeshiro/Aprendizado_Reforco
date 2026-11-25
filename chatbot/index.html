@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141b1b">
+  <title>Deadlock | Assistente tático</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="modelo/config.js" defer></script>
+  <script src="motor.js" defer></script>
+  <script src="modelo/heroi1.js" defer></script>
+  <script src="modelo/heroi2.js" defer></script>
+  <script src="modelo/heroi3.js" defer></script>
+  <script src="modelo/heroi4.js" defer></script>
+  <script src="modelo/heroi5.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">D</span><div><span class="brand-name">DEADLOCK</span><span class="brand-sub">Assistente tático</span></div></div>
+    <span id="status" class="status" role="status"><i></i> Carregando modelo local</span>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div><div class="eyebrow">APRENDIZADO POR REFORÇO <span> / </span> PROJETO ACADÊMICO</div><h1>Planeje seu próximo duelo.</h1><p>Recomendações de heróis e itens com base no conhecimento adquirido pelo agente Q-learning.</p></div>
+      <div class="stats"><div><b id="hero-count">5</b><span>Heróis</span></div><div><b id="item-count">13</b><span>Itens</span></div><div><b id="match-count">60</b><span>Contextos de duelo</span></div></div>
+    </section>
+    <div class="workspace">
+      <section class="panel controls" aria-labelledby="config-heading">
+        <div class="section-label">01 / CONTEXTO</div><h2 id="config-heading">Monte a situação</h2>
+        <div class="modes" role="group" aria-label="Tipo de recomendação"><button type="button" id="mode-item" class="mode active" aria-pressed="true">Itens</button><button type="button" id="mode-hero" class="mode" aria-pressed="false">Heróis</button></div>
+        <form id="query-form">
+          <div id="hero-field" class="field"><label for="heroi">Seu herói</label><select id="heroi" required></select></div>
+          <div class="field"><label for="adversario">Herói adversário</label><select id="adversario" required></select></div>
+          <div class="field"><label for="distancia">Distância do duelo</label><select id="distancia" required></select></div>
+          <div id="hero-info" class="match-info" hidden>Comparamos os heróis em um único duelo contra o adversário selecionado: vida cheia, 800 almas e inventário vazio.</div>
+          <div id="item-fields">
+            <div class="field-grid"><div class="field"><label for="almas">Almas disponíveis</label><select id="almas" required></select></div><div class="field"><label for="etapas">Duelos restantes</label><select id="etapas"><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select></div></div>
+            <div class="field"><div class="label-row"><label for="vida">Vida inicial <span id="vida-max"></span></label><button id="vida-cheia" type="button" class="text-button">Vida cheia</button></div><select id="vida" required></select><div class="health-track"><div id="health-fill"></div></div></div>
+            <p class="muted">Escolha saldo, vida e duelos livremente. Não é necessário reproduzir compras anteriores. O saldo é o valor disponível agora.</p>
+            <fieldset class="inventory"><legend>Inventário inicial <span id="inventory-count">0 / 2 itens</span></legend><div id="items" class="items-list"></div></fieldset>
+          </div>
+          <button id="submit" class="primary" type="submit" disabled>Consultar agente <span aria-hidden="true">↗</span></button>
+          <p id="form-error" class="error" role="alert" hidden></p>
+        </form>
+      </section>
+      <section class="panel chat" aria-labelledby="chat-heading">
+        <div class="chat-head"><div><div class="section-label">02 / CONSULTA</div><h2 id="chat-heading">Assistente de combate</h2></div><button id="clear-chat" class="secondary" type="button">Limpar conversa</button></div>
+        <div class="chat-body" id="messages" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="message bot"><div class="avatar">Q</div><div class="bubble"><div class="sender">ASSISTENTE</div><p>Olá! Posso ajudar você a escolher um item ou comparar heróis contra um adversário. Escolha também a distância do próximo confronto. Escolha qualquer combinação oferecida pelos controles: todos esses cenários foram treinados.</p><p class="muted">As respostas refletem apenas os duelos simulados, com chance de acerto estimada e recompensas por sobrevivência. Não são previsões de partidas reais.</p></div></div>
+        </div>
+        <div class="chat-foot"><span class="small-dot"></span><span id="model-info">Modelo tabular · Carregando dados locais</span></div>
+      </section>
+    </div>
+    <footer><span>Deadlock · Projeto acadêmico independente · Versão estática</span><span>Dados históricos da Deadlock API · 20 habilidades simuladas · Acerto esperado · Distância horizontal fixa</span></footer>
+  </main>
+</body>
+</html>
